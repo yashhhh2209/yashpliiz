@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #e0f7fa);
+  color: #333;
+  text-align: center;
+  transition: background 1s ease-in-out;
+}
+
+.container {
+  padding: 60px 20px;
+}
+
+h1, h2 {
+  font-size: 36px;
+  color: #ff4081;
+}
+
+p {
+  font-size: 20px;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.no {
+  background-color: #f06292;
+  color: white;
+}
+
+.next {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #8e24aa;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+video {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease;
+}
+
+.end-msg {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #4caf50;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* New styles for the last content */
+#last-content h2 {
+  margin-top: 30px;
+  font-size: 28px;
+  color: #9c27b0;
+}
+
+#last-content .buttons .yes {
+  background-color: #4caf50;
+}
+
+#last-content .buttons .no {
+  background-color: #f44336;
+}

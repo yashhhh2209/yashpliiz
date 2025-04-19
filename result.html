@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="video-page">
+  <div class="container fade-in">
+    <h2>Step 2: The Result 🎉</h2>
+    <video id="resultVideo" controls>
+      <source src="videos/video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <p class="end-msg" id="message" style="display: none;">Hope this made you smile 💖</p>
+    <div id="last-content" style="display: none;">
+      <h2>So, you want to play more games?? 🎮</h2>
+      <div class="buttons">
+        <a href="#" class="yes">Yes 😇</a>
+        <a href="#" class="no">No 🙈</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('resultVideo');
+      const message = document.getElementById('message');
+      const lastContent = document.getElementById('last-content');
+
+      if (video) {
+        // Show the message and last content after the video ends
+        video.addEventListener('ended', () => {
+          message.style.display = 'block';
+          lastContent.style.display = 'block';
+
+          // Add functionality to the "No" button to make it move randomly
+          const noButton = document.querySelector('.no');
+          if (noButton) {
+            noButton.addEventListener('click', (e) => {
+              e.preventDefault();
+
+              // Generate random positions for the button
+              const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+              const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+              // Move the button to the new position
+              noButton.style.position = 'absolute';
+              noButton.style.left = `${randomX}px`;
+              noButton.style.top = `${randomY}px`;
+            });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
